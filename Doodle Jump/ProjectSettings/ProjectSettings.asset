@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 2fe8627c9f394b94e8a712bfcd5a8cd4
+  productGUID: 4e1ea559d5771c746bab44cadd8b1555
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: DoodleJump
+  productName: Doodle Jump
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -815,14 +815,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: DoodleJump
+  metroPackageName: Doodle Jump
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: DoodleJump
+  metroApplicationDescription: Doodle Jump
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -890,10 +890,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 87fb0aa7-f400-42f7-96e9-dc1df3c5d77f
+  cloudProjectId: f4bddbd5-59d9-457f-8ddd-eb886822096d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DoodleJump
+  projectName: Doodle Jump
   organizationId: marionodyssey
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
