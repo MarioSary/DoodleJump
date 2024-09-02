@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,16 +6,15 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject _doodler;
 
-    [Header("Instantiate This Platforms")] [SerializeField]
-    GameObject _greenPlatformPrefab;
+    [Header("Instantiate This Platforms")] 
+    [SerializeField] GameObject _greenPlatformPrefab;
 
     [SerializeField] GameObject _bluePlatformPrefab;
     [SerializeField] GameObject _brownPlatformPrefab;
     [SerializeField] GameObject _whitePlatformPrefab;
 
-    [Header("Platforms' Extensions")] [SerializeField]
-    GameObject Spring;
-
+    [Header("Platforms' Extensions")] 
+    [SerializeField] GameObject Spring;
     [SerializeField] GameObject Trampoline;
     [SerializeField] GameObject Propeller;
 
@@ -30,89 +25,125 @@ public class LevelGenerator : MonoBehaviour
     private Vector3 _screenBounds;
     float offset = 0.6f; // half of the platform width
     Vector3 spawnPos = new Vector3();
+    private float _posY = -4f;
+    private float lastPlatformY;
+    private GameObject _firstPlatform;
+    
+    //to destroy platforms
+    private List<GameObject> _greenPlatforms = new List<GameObject>();
+    private List<GameObject> _bluePlatforms = new List<GameObject>();
 
-
-
-    // prevent overlapping //to destroy platforms
-    private List<GameObject> _platforms = new List<GameObject>();
-    private GameObject _lastPlatform;
-    private int _platformIndex;
 
     private void Start()
     {
+        Debug.Log("Screen size is" + Screen.width + "And Screen Bound is" + _screenBounds.x);
         _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,
             Camera.main.transform.position.z));
-        GameObject firstPlatform = Instantiate(_greenPlatformPrefab, new Vector3(0, (_screenBounds.y * -1) - 2, 0),
-            quaternion.identity);
-        _doodler.transform.position = new Vector3(0, firstPlatform.transform.position.y + 1f, 0);
-        Destroy(firstPlatform, 3f);
-
+        
+        _firstPlatform = Instantiate(_greenPlatformPrefab, new Vector3(0, (_screenBounds.y * -1) - 2, 0),Quaternion.identity);
+        _doodler.transform.position = new Vector3(0, _firstPlatform.transform.position.y + 1f, 0);
+        Destroy(_firstPlatform, 2f);
     }
 
     private void Update()
     {
-        
         _playerheight = (int) _doodler.transform.position.y;
-        if (_platforms.Count < 20)
+        Debug.Log(_playerheight);
+        if (_greenPlatforms.Count < 20)
         {
             switch (_playerheight)
             {
-                case < 20:
-                    GeneratePlatform(20);
+                case < 50:
+                    GeneratePlatform(10);
+                    GenerateBrown(2);
                     break;
-                case > 20:
-                    GeneratePlatform(20);
-                    GenerateBrown(5);
+                
+                case >= 50:
+                    GeneratePlatform(5);
+                    GenerateBrown(3);
                     break;
             }
+            
         }
 
-        for (int i = 0; i < _platforms.Count; i++)
+        for (int i = 0; i < _greenPlatforms.Count; i++)
         {
-            if (_platforms[i] != null)
+            if (_greenPlatforms[i] != null)
             {
-                if (_platforms[i].transform.position.y < Camera.main.transform.position.y - _screenBounds.y)
+                if (_greenPlatforms[i].transform.position.y < Camera.main.transform.position.y - _screenBounds.y)
                 {
-                    Destroy(_platforms[i]);
-                    _platforms.Remove(_platforms[i]);
+                    Destroy(_greenPlatforms[i]);
+                    _greenPlatforms.Remove(_greenPlatforms[i]);
                 }
             }
-
         }
-
+        for (int i = 0; i < _bluePlatforms.Count; i++)
+        {
+            if (_bluePlatforms[i] != null)
+            {
+                if (_bluePlatforms[i].transform.position.y < Camera.main.transform.position.y - _screenBounds.y)
+                {
+                    Destroy(_bluePlatforms[i]);
+                    _bluePlatforms.Remove(_greenPlatforms[i]);
+                }
+            }
+        }
     }
 
     public void GeneratePlatform(int platformCount)
     {
-        List<Vector3> platformPositions = new List<Vector3>();
-
         for (int i = 0; i < platformCount; i++)
         {
             spawnPos.x = Random.Range(_screenBounds.x * -1 + offset, _screenBounds.x - offset);
-            if (Time.time <= 0.5)
-            {
-                spawnPos.y = Random.Range(_screenBounds.y * -1 + offset, _screenBounds.y + 2f);
-            }
-            else if (Time.time > 0.5)
-            {
-                spawnPos.y = Random.Range(_doodler.transform.position.y + _screenBounds.y,
-                    _doodler.transform.position.y + _screenBounds.y + (Screen.height / 100f));
-            }
-            spawnPos = new Vector3(spawnPos.x, spawnPos.y, 0);
-
+            spawnPos = new Vector3(spawnPos.x, _posY, 0);
+            
             GameObject newPlatform = Instantiate(_greenPlatformPrefab, spawnPos, Quaternion.identity);
-            _platforms.Add(newPlatform);
-            Debug.Log(_platforms.IndexOf(newPlatform));
-
-            foreach (Vector3 platformPosition in platformPositions)
+            _greenPlatforms.Add(newPlatform);
+            
+            float lastPlatformY = newPlatform.transform.position.y;
+            
+            if (_playerheight <= 20)
             {
-                if (Vector3.Distance(platformPosition, spawnPos) < 3f) // Adjust overlap distance as needed
+                _posY += 0.6f;
+            }
+
+            if (_playerheight > 20 && _playerheight <= 40)
+            {
+                _posY += Random.Range(0.2f, 3f);
+                if (_posY > lastPlatformY + 0.5f && _posY <= lastPlatformY + 2f)
                 {
-                    return;
+                    GenerateBrown(2);
                 }
-                else
+            }
+
+            if (_playerheight > 40 && _playerheight <= 80)
+            {
+                _posY += Random.Range(0.2f, 4f);
+                if (_posY > lastPlatformY + 1f && _posY <= lastPlatformY + 2f)
                 {
-                    platformPositions.Add(spawnPos);
+                    GenerateBrown(1);
+                }
+                if (_posY > lastPlatformY + 2f && _posY <= lastPlatformY + 3f)
+                {
+                    GenerateWhite(Random.Range(2,3));
+                }
+            }
+
+            if (_playerheight > 80)
+            {
+                _posY += Random.Range(0.2f, 5f);
+                if (_posY > lastPlatformY + 1f && _posY <= lastPlatformY + 2f)
+                {
+                    GenerateBrown(1);
+                }
+                if (_posY > lastPlatformY + 2f && _posY <= lastPlatformY + 3f)
+                {
+                    GenerateWhite(Random.Range(2,3));
+                }
+
+                if (_posY > lastPlatformY + 3f && _posY <= lastPlatformY + 4f)
+                {
+                    GenerateBlue(Random.Range(2, 4));
                 }
             }
         }
@@ -123,54 +154,35 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < platformCount; i++)
         {
             spawnPos.x = Random.Range(_screenBounds.x * -1 + offset, _screenBounds.x - offset);
-            if (Time.time <= 0.5)
-            {
-                spawnPos.y = Random.Range(_screenBounds.y * -1 + offset, _screenBounds.y);
-            }
-            else if (Time.time > 0.5)
-            {
-                spawnPos.y = Random.Range(_doodler.transform.position.y + _screenBounds.y,
-                    _doodler.transform.position.y + _screenBounds.y + (Screen.height / 100f));
-            }
+            spawnPos = new Vector3(spawnPos.x, _posY, 0);
 
-            spawnPos = new Vector3(spawnPos.x, spawnPos.y, 0);
-
-            GameObject newBrownPlatform = Instantiate(_brownPlatformPrefab, spawnPos, Quaternion.identity);
-            _platforms.Add(newBrownPlatform);
+            Instantiate(_brownPlatformPrefab, spawnPos, Quaternion.identity);
+            _posY += Random.Range(0.4f, 0.8f);
         }
     }
-}
 
-/*private bool PrevendOverlap(Vector3 spawnPos)
-{
-    platformColliders = Physics2D.OverlapCircleAll(transform.position, PlatformRadius);
-    
-    for (int i = 0; i < platformColliders.Length; i++)
+    public void GenerateWhite(int platformCount)
     {
-        Vector3 centerPoint = platformColliders[i].bounds.center;
-        float width = platformColliders[i].bounds.extents.x;
-        float height = platformColliders[i].bounds.extents.y;
-
-        float leftExtent = centerPoint.x - width;
-        float rightExtent = centerPoint.x + width;
-        float upperExtent = centerPoint.y + height;
-        float lowerExtent = centerPoint.y - height;
-
-        if (spawnPos.x > leftExtent && spawnPos.x <= rightExtent)
+        for (int i = 0; i < platformCount; i++)
         {
-            if (spawnPos.y > lowerExtent && spawnPos.y <= upperExtent)
-            {
-                return false;
-            }
+            spawnPos.x = Random.Range(_screenBounds.x * -1 + offset, _screenBounds.x - offset);
+            spawnPos = new Vector3(spawnPos.x, _posY, 0);
+
+            Instantiate(_whitePlatformPrefab, spawnPos, Quaternion.identity);
+            _posY += Random.Range(0.4f, 0.8f);
         }
     }
+    public void GenerateBlue(int platformCount)
+    {
+        for (int i = 0; i < platformCount; i++)
+        {
+            spawnPos.x = Random.Range(_screenBounds.x * -1 + offset, _screenBounds.x - offset);
+            spawnPos = new Vector3(spawnPos.x, _posY, 0);
 
-    return true;
+            GameObject newBrownPlatform = Instantiate(_bluePlatformPrefab, spawnPos, Quaternion.identity);
+            _bluePlatforms.Add(newBrownPlatform);
+            _posY += Random.Range(0.6f, 1f);
+        }
+    }
 }
-
-protected void OnDrawGizmos()
-{
-    Gizmos.color = Color.red;
-    Gizmos.DrawWireSphere(transform.position, PlatformRadius);
-} */
 

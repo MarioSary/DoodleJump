@@ -28,11 +28,7 @@ public class PlatformGreen : MonoBehaviour
                 playerRb.velocity = playerVelocity;
             }
 
-            // _rb.velocity = new Vector2(0, 0.1f);
-            // _rb.velocity = new Vector2(0, -0.1f);
-            // _rb.velocity = Vector2.zero;
-
-            if (name == "Platform_White")
+            if (tag == "PlatformWhite")
             {
                 GetComponent<PlatformWhite>().WhiteDestroy();
             }
@@ -43,10 +39,6 @@ public class PlatformGreen : MonoBehaviour
                 _platformCollider.enabled = false;
                 GetComponent<PlatformBrown>().PlayAnim();
             }
-
         }
-        
     }
-
-    
 }
