@@ -9,6 +9,7 @@ TagManager:
   - PlatformBrown
   - PlatformWhite
   - Death
+  - Deactivator
   layers:
   - Default
   - TransparentFX

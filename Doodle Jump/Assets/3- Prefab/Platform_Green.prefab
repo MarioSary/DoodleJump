@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5946122380852854996}
   - component: {fileID: 3897152181597235794}
+  - component: {fileID: 4463929840732860380}
   - component: {fileID: 3439401419928255197}
   - component: {fileID: 9223089057752773750}
   - component: {fileID: 4414294586031826478}
-  - component: {fileID: 7784522169876548966}
   m_Layer: 6
   m_Name: Platform_Green
   m_TagString: Platform
@@ -77,17 +77,44 @@ SpriteRenderer:
   m_SortingLayerID: -1590542275
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1098422573, guid: 9a300efc30f66d54f88814fe2084ed2e, type: 3}
+  m_Sprite: {fileID: -1815925470, guid: d4a9f5244b5e6f546899db6b9ecc0231, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.57, y: 0.15}
+  m_Size: {x: 1.14, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &4463929840732860380
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3888234723083140620}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!68 &3439401419928255197
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -160,32 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4cc98295c1681478d827ab1399e467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 10
-  _platformCollider: {fileID: 3439401419928255197}
---- !u!50 &7784522169876548966
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3888234723083140620}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  jumpForce: 10
+  platformCollider: {fileID: 3439401419928255197}
+  poolTag: Basic

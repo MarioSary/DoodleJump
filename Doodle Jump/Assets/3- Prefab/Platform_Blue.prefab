@@ -78,11 +78,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 677354506249181844}
+      insertIndex: 2
+      addedObject: {fileID: -1326950933321854542}
     - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1900470498865027424}
+      addedObject: {fileID: 677354506249181844}
   m_SourcePrefab: {fileID: 100100000, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
 --- !u!68 &5313628729734904788 stripped
 EdgeCollider2D:
@@ -94,22 +94,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
   m_PrefabInstance: {fileID: 7351836615253459209}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &677354506249181844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6049232129895776005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b44d5bd4b5e5274fa36508ea72d0eff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpForce: 10
-  _platformCollider: {fileID: 5313628729734904788}
-  _speed: 2
---- !u!50 &1900470498865027424
+--- !u!50 &-1326950933321854542
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -136,3 +121,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &677354506249181844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049232129895776005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b44d5bd4b5e5274fa36508ea72d0eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
+  platformCollider: {fileID: 5313628729734904788}
+  poolTag: Movable
+  _speed: 2

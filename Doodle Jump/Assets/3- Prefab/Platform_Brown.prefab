@@ -82,14 +82,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: -6189488225722347020}
+    - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3567922710904856427}
     - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8099464157459478091}
-    - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -6912296124061371581}
   m_SourcePrefab: {fileID: 100100000, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
 --- !u!68 &2536274750668840783 stripped
 EdgeCollider2D:
@@ -101,6 +101,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
   m_PrefabInstance: {fileID: 903426016001959314}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &-6189488225722347020
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4142280098580601758}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &3567922710904856427
 Animator:
   serializedVersion: 5
@@ -134,33 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cff3dffd15701d468aa71af618b730d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 0
-  _platformCollider: {fileID: 2536274750668840783}
+  jumpForce: 10
+  platformCollider: {fileID: 2536274750668840783}
+  poolTag: Fragile
   _BrownAnimator: {fileID: 3567922710904856427}
---- !u!50 &-6912296124061371581
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4142280098580601758}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0

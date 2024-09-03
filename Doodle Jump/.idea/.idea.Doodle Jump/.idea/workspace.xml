@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6231a00a-5a51-4f27-b7fb-09c7b153ffdf" name="Changes" comment="" />
+    <list default="true" id="6231a00a-5a51-4f27-b7fb-09c7b153ffdf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/ObjectPooler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/ObjectPooler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/Spring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/Spring.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Doodle Jump/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doodle Jump/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1- Scenes/DoodleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1- Scenes/DoodleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2- Script/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/LevelGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2- Script/PlatformGreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/PlatformGreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Blue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Blue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Brown.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Brown.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Green.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Green.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/Platform_White.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/Platform_White.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/Spring.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/Spring.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/trampoline.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/trampoline.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

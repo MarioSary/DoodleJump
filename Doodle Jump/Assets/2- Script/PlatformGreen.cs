@@ -6,14 +6,9 @@ using UnityEngine;
 
 public class PlatformGreen : MonoBehaviour
 {
-    public float _jumpForce = 10f;
-    public EdgeCollider2D _platformCollider;
-    private Rigidbody2D _rb;
-
-    private void Start()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-    }
+    public float jumpForce = 10f;
+    public EdgeCollider2D platformCollider;
+    public string poolTag;
 
 
     protected void OnCollisionEnter2D(Collision2D col)
@@ -24,7 +19,7 @@ public class PlatformGreen : MonoBehaviour
             if (playerRb != null)
             {
                 Vector2 playerVelocity = playerRb.velocity;
-                playerVelocity.y = _jumpForce;
+                playerVelocity.y = jumpForce;
                 playerRb.velocity = playerVelocity;
             }
 
@@ -36,9 +31,19 @@ public class PlatformGreen : MonoBehaviour
             if (tag == "PlatformBrown")
             {
                 transform.position -= new Vector3(0, 0.2f, 0);
-                _platformCollider.enabled = false;
+                platformCollider.enabled = false;
                 GetComponent<PlatformBrown>().PlayAnim();
             }
+        }
+    }
+
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Deactivator"))
+        {
+            Debug.Log("Enter");
+            ObjectPooler.Instance.poolDictionary[poolTag].Enqueue(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
