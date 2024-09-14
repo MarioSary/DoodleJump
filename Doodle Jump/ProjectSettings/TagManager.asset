@@ -10,6 +10,8 @@ TagManager:
   - PlatformWhite
   - Death
   - Deactivator
+  - Trampoline
+  - Propeller
   layers:
   - Default
   - TransparentFX

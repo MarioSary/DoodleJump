@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2565277064377691248, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+      propertyPath: m_Name
+      value: Platform_White
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565277064377691248, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+      propertyPath: m_TagString
+      value: PlatformWhite
+      objectReference: {fileID: 0}
     - target: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
       propertyPath: m_Name
       value: Platform_White
@@ -32,6 +40,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5374652544159759565, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1536528099, guid: 4b6e16f35b3dfb0419812a5ef4afea5a, type: 3}
     - target: {fileID: 5946122380852854996, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.77
@@ -74,65 +86,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4414294586031826478, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+    - {fileID: 1127686199091577343, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 7336771633473651831}
-    - targetCorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 2565277064377691248, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1786241286342913919}
+      addedObject: {fileID: 5185673889840977925}
   m_SourcePrefab: {fileID: 100100000, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
---- !u!1 &7099901737377716934 stripped
+--- !u!1 &8424988074485090490 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3888234723083140620, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2565277064377691248, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
   m_PrefabInstance: {fileID: 6301138282820822218}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &7336771633473651831
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099901737377716934}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1786241286342913919
+--- !u!114 &5185673889840977925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099901737377716934}
+  m_GameObject: {fileID: 8424988074485090490}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7191e4a7f9919343bfdee2c3ac8602f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   jumpForce: 10
-  platformCollider: {fileID: 8703512752769621527}
-  poolTag: Disposable
---- !u!68 &8703512752769621527 stripped
-EdgeCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3439401419928255197, guid: b3c9976288e15ee4383ef44b74bfe107, type: 3}
-  m_PrefabInstance: {fileID: 6301138282820822218}
-  m_PrefabAsset: {fileID: 0}
+  playerJumpSprite:
+  - {fileID: 21300000, guid: 4e7cdb7ce0051b8429f98e39d03d4b7f, type: 3}
+  - {fileID: 21300000, guid: e3ce4e9dc9a761b4d83e2973b46eec50, type: 3}
+  _playerJumpAudio: {fileID: 8300000, guid: 1942dee43d7876e4aa282c0de9b28761, type: 3}
+  _animator: {fileID: 0}
