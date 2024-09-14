@@ -87,8 +87,25 @@ public class LevelGenerator : MonoBehaviour
     
     
     #region MyLowPerformanceCode
+
+    #region Singleton
+
+    public static LevelGenerator Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    #endregion
     
-    //[SerializeField] private GameObject _doodler;
+    
     private PLayer _pLayer;
     [Header("Instantiate This Platforms")] 
     [SerializeField] GameObject _greenPlatformPrefab;
@@ -113,14 +130,12 @@ public class LevelGenerator : MonoBehaviour
 
     private bool _isDied = false;
 
-    private void Awake()
-    {
-        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,
-            Camera.main.transform.position.z));
-    }
+    
 
     private void Start()
     {
+        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,
+            Camera.main.transform.position.z));
         _pLayer = GameObject.Find("Player").GetComponent<PLayer>();
         if (_pLayer == null)
         {
@@ -299,6 +314,18 @@ public class LevelGenerator : MonoBehaviour
             newPowerUp.transform.parent = transform.GetChild(4);
             _otherPlatforms.Add(newPowerUp);
             _posY += Random.Range(2, 4);
+        }
+    }
+
+    public void OnGameOver()
+    {
+        _isDied = true;
+        if (transform.childCount > 0)
+        {
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
     }
 

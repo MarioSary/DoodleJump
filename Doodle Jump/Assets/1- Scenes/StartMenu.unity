@@ -1481,8 +1481,8 @@ GameObject:
   - component: {fileID: 8690718034530306012}
   - component: {fileID: 5378121173427973803}
   - component: {fileID: 311767690152628465}
-  - component: {fileID: 9094046716107472346}
   - component: {fileID: 1730548925408628850}
+  - component: {fileID: 9094046716107472347}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1769,11 +1769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 8
-  platformCollider: {fileID: 6704345030349190954}
-  playerJumpSprite:
-  - {fileID: 21300000, guid: c2ceaafe4f9d5ae488e84e2b59b81736, type: 3}
-  - {fileID: 21300000, guid: 1602c1b65f5f472428ecfe3cdf721853, type: 3}
   _playerJumpAudio: {fileID: 8300000, guid: 1942dee43d7876e4aa282c0de9b28761, type: 3}
+  _animator: {fileID: 0}
 --- !u!1 &6398815512200907338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,7 +2207,7 @@ RectTransform:
   m_AnchoredPosition: {x: 24, y: 184}
   m_SizeDelta: {x: 111, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9094046716107472346
+--- !u!114 &9094046716107472347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2219,10 +2216,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4002860984793470260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9737f60a874ac4447ac4e91bdeda067b, type: 3}
+  m_Script: {fileID: 11500000, guid: b1a38e69341c2d94883b1c39cadfb1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  doodlerSprite: {fileID: 8690718034530306012}
+  jumpSprite:
+  - {fileID: 21300000, guid: c2ceaafe4f9d5ae488e84e2b59b81736, type: 3}
+  - {fileID: 21300000, guid: 1602c1b65f5f472428ecfe3cdf721853, type: 3}
 --- !u!114 &9166896560673603012
 MonoBehaviour:
   m_ObjectHideFlags: 0
