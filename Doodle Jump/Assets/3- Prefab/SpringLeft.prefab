@@ -189,11 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
-  playerJumpSprite:
-  - {fileID: 21300000, guid: 4e7cdb7ce0051b8429f98e39d03d4b7f, type: 3}
-  - {fileID: 21300000, guid: e3ce4e9dc9a761b4d83e2973b46eec50, type: 3}
   _playerJumpAudio: {fileID: 8300000, guid: 1942dee43d7876e4aa282c0de9b28761, type: 3}
-  _animator: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &4090086632851243305
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +208,7 @@ GameObject:
   - component: {fileID: 2174819677929667258}
   m_Layer: 0
   m_Name: Spring
-  m_TagString: Untagged
+  m_TagString: Spring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,8 +401,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 15
-  playerJumpSprite:
-  - {fileID: 21300000, guid: 4e7cdb7ce0051b8429f98e39d03d4b7f, type: 3}
-  - {fileID: 21300000, guid: e3ce4e9dc9a761b4d83e2973b46eec50, type: 3}
   _playerJumpAudio: {fileID: 8300000, guid: ad0b403293b8f6a4c803cd030be6e2f4, type: 3}
-  _animator: {fileID: 411407013537330793}
+  animator: {fileID: 411407013537330793}

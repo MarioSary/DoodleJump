@@ -38,6 +38,6 @@ public class GameManager : MonoBehaviour
     public void OnGameOver()
     {
         _gameOver = true;
-        Destroy(doodler.gameObject, 5);
+        Destroy(doodler.gameObject, 2);
     }
 }

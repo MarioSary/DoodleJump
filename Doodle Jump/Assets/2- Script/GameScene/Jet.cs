@@ -27,7 +27,7 @@ public class Jet : MonoBehaviour
     {
         if (Other.gameObject.tag == "Player" && !_attached)
         {
-            if (Other.transform.childCount <= 1)
+            if (Other.transform.childCount <= 2)
             {
                 transform.parent = Other.transform;
                 if (transform.parent.localScale.x < 0)
@@ -45,7 +45,7 @@ public class Jet : MonoBehaviour
                 if (rb != null)
                 {
                     Vector2 force = rb.velocity;
-                    force.y = 40;
+                    force.y = 30;
                     rb.velocity = force;
                 }
             }

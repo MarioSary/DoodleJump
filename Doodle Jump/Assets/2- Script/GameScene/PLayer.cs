@@ -1,44 +1,73 @@
+using System;
 using UnityEngine;
 
 public class PLayer : MonoBehaviour
 {
+    //Bounds
     private Vector3 _screenBounds;
     private float _objectWidth = 0.5f;
     private float _objectHeight = 1f;
     
+    //Movements
     [SerializeField] private float speed;
     private Rigidbody2D _rb;
     [SerializeField] private BoxCollider2D doodlerCollider;
     
+    //Score system
     private int _score = 0;
     private int _highScore = 0;
     
+    //Change sprites
     private bool _rightDir = true;
-    [SerializeField] private SpriteRenderer doodlerSprite;
-    [SerializeField] Sprite[] playerJumpSprite = new Sprite[2];
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite[] doodlerSprites = new Sprite[3];
+    
+    //Shoot
+    [SerializeField] private GameObject doodlerShooter;
 
+    // Audios
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip deathAudio;
 
+    // Game over
     private bool _isGameOver = false;
+    private bool _isHit = false;
     private float _gameOverDistance;
 
 
     private void Start()
     {
-        _highScore = PlayerPrefs.GetInt("HighScore", 0);
         _screenBounds =
             Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        
+        _gameOverDistance = Camera.main.transform.position.y + (_screenBounds.y + _objectHeight); // is 6f
+        //Debug.Log("Screen Y is :" + _screenBounds.y); // is 5f
+        //Debug.Log("_gameOverDistance is :" + _gameOverDistance); // is 5f
+        
+        _highScore = PlayerPrefs.GetInt("HighScore", 0);
+        
         _rb = GetComponent<Rigidbody2D>();
         _rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-        _gameOverDistance = Camera.main.transform.position.y + (_screenBounds.y + _objectHeight); // is 6f
-        Debug.Log("Screen Y is :" + _screenBounds.y); // is 5f
-        Debug.Log("_gameOverDistance is :" + _gameOverDistance); // is 5f
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            spriteRenderer.sprite = doodlerSprites[2];
+            doodlerShooter.SetActive(true);
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            doodlerShooter.SetActive(false);
+        }
+    }
+
     private void FixedUpdate()
     {
         PlayerMovement();
-        
+
         //for game over
         if (transform.position.y < Camera.main.transform.position.y - _gameOverDistance && !_isGameOver)
         {
@@ -72,14 +101,14 @@ public class PLayer : MonoBehaviour
         }
         if (direction.y > 0)
         {
-            doodlerSprite.sprite = playerJumpSprite[0];
+            spriteRenderer.sprite = doodlerSprites[0];
             doodlerCollider.enabled = false;
         }
 
         if (direction.y < 0)
         {
-            doodlerSprite.sprite = playerJumpSprite[1];
-            if (!_isGameOver)
+            spriteRenderer.sprite = doodlerSprites[1];
+            if (!_isGameOver && !_isHit)
             {
                 doodlerCollider.enabled = true; 
             }
@@ -105,10 +134,10 @@ public class PLayer : MonoBehaviour
 
     void JetFall()
     {
-        if (transform.childCount > 1)
+        if (transform.childCount > 2)
         {
-            transform.GetChild(1).GetComponent<Jet>().SetFall();
-            transform.GetChild(1).parent = null;
+            transform.GetChild(2).GetComponent<Jet>().SetFall();
+            transform.GetChild(2).parent = null;
         }
     }
 
@@ -121,5 +150,10 @@ public class PLayer : MonoBehaviour
             UiManager.Instance.UpdateHighScore(_score);
         }
         PlayerPrefs.Save();
+    }
+
+    public void OnHit()
+    {
+        _isHit = true;
     }
 }

@@ -113,6 +113,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] GameObject _brownPlatformPrefab;
     [SerializeField] GameObject _whitePlatformPrefab;
     [SerializeField] GameObject[] powerUpsPrefab = new GameObject[4];
+    [SerializeField] GameObject[] enemyPrefab = new GameObject[3];
 
     // for spawn variation
     private int _playerheight;
@@ -250,13 +251,14 @@ public class LevelGenerator : MonoBehaviour
                 }
                 if (_posY > lastPlatformY + 2f && _posY <= lastPlatformY + 3f)
                 {
-                    GenerateWhite(Random.Range(2,3));
+                    GenerateWhite(Random.Range(1,3));
                 }
 
                 if (_posY > lastPlatformY + 3f && _posY <= lastPlatformY + 4f)
                 {
-                    GenerateBlue(Random.Range(2, 4));
+                    GenerateBlue(Random.Range(1, 3));
                     GeneratePowerUps(1);
+                    GenerateEnemy(1);
                 }
             }
         }
@@ -303,9 +305,9 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
-    public void GeneratePowerUps(int platformCount)
+    public void GeneratePowerUps(int powerUpCount)
     {
-        for (int i = 0; i < platformCount; i++)
+        for (int i = 0; i < powerUpCount; i++)
         {
             spawnPos.x = Random.Range(_screenBounds.x * -1 + offset, _screenBounds.x - offset);
             spawnPos = new Vector3(spawnPos.x, _posY, 0);
@@ -314,6 +316,20 @@ public class LevelGenerator : MonoBehaviour
             newPowerUp.transform.parent = transform.GetChild(4);
             _otherPlatforms.Add(newPowerUp);
             _posY += Random.Range(2, 4);
+        }
+    }
+
+    public void GenerateEnemy(int enemyCount)
+    {
+        for (int i = 0; i < enemyCount; i++)
+        {
+            spawnPos.x = Random.Range((_screenBounds.x * -1) + 1, _screenBounds.x - 1);
+            spawnPos = new Vector3(spawnPos.x, _posY, 0);
+
+            GameObject newEnemy = Instantiate(enemyPrefab[Random.Range(0,3)], spawnPos, Quaternion.identity);
+            newEnemy.transform.parent = transform.GetChild(5);
+            _otherPlatforms.Add(newEnemy);
+            _posY += Random.Range(3, 4);
         }
     }
 

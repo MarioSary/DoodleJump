@@ -26,14 +26,14 @@ AnimationClip:
       value: {fileID: 294841423, guid: 4b6e16f35b3dfb0419812a5ef4afea5a, type: 3}
     - time: 0.16666667
       value: {fileID: -1742219731, guid: 4b6e16f35b3dfb0419812a5ef4afea5a, type: 3}
-    - time: 0.23333333
+    - time: 0.25
       value: {fileID: -1450822654, guid: 4b6e16f35b3dfb0419812a5ef4afea5a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 60
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +79,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.3
+  - time: 0.33333334
     functionName: BrownDestroy
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -14,7 +14,7 @@ public class PlatformGreen : MonoBehaviour
 
     private AudioSource _playerAudioSource;
     [SerializeField] private AudioClip _playerJumpAudio;
-    public Animator _animator;
+    [SerializeField] Animator animator;
 
     protected void OnCollisionEnter2D(Collision2D col)
     {
@@ -29,9 +29,11 @@ public class PlatformGreen : MonoBehaviour
                 playerRb.velocity = playerVelocity;
             }
 
-            if (_animator != null)
+            if (animator != null)
             {
-                _animator.SetBool("IsPlayingAnim", true);
+                animator.SetBool("IsPlayingAnim", true);
+                Debug.Log("Anim Played");
+
             }
             
             _playerAudioSource = col.collider.GetComponent<AudioSource>();

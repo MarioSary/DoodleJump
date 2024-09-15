@@ -12,6 +12,9 @@ TagManager:
   - Deactivator
   - Trampoline
   - Propeller
+  - Spring
+  - Damage
+  - Bullet
   layers:
   - Default
   - TransparentFX

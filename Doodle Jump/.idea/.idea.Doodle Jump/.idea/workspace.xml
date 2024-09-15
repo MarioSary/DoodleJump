@@ -5,19 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6231a00a-5a51-4f27-b7fb-09c7b153ffdf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/2- Script/Menu/MenuDoodler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/2- Script/Menu/MenuDoodler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4- Sprites/UI/Buttons/resume@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/4- Sprites/UI/Buttons/resume@2x.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Bullet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Bullet.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Enemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Enemy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Shoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Shoot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/Bullet.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/Bullet.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/EnemyIce.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/EnemyIce.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/EnemyIceFlower.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/EnemyIceFlower.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/EnemyPenguin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3- Prefab/EnemyPenguin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4- Sprites/projectile-tiles@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4- Sprites/projectile-tiles@2x.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4- Sprites/snow@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4- Sprites/snow@2x.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/IceEnemy_Anim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/IceEnemy_Anim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/IceFlowerEnemy_Anim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/IceFlowerEnemy_Anim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_0.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_0.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_13.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_13.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_186.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_186.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_2.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/5- Animation/game-tiles-ice@2x_2.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/6- Audio/mixkit-retro-arcade-game-over-470.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/6- Audio/mixkit-retro-arcade-game-over-470.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/6- Audio/snowball-throw2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/6- Audio/snowball-throw2.mp3.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Doodle Jump/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doodle Jump/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1- Scenes/DoodleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1- Scenes/DoodleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1- Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1- Scenes/StartMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/CameraMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/Jet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/Jet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/LevelGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/ObjectPooler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/ObjectPooler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/PLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/PLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/PlatformGreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/PlatformGreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2- Script/GameScene/UiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2- Script/GameScene/UiManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Brown.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/Platform_Brown.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/SpringLeft.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/SpringLeft.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/SpringMiddle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/SpringMiddle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3- Prefab/SpringRight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3- Prefab/SpringRight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5- Animation/Platform_Brown.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5- Animation/Platform_Brown.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5- Animation/Platform_Brown_Anim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5- Animation/Platform_Brown_Anim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5- Animation/Spring.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5- Animation/Spring.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/5- Animation/Spring_Anim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5- Animation/Spring_Anim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +131,7 @@
       <workItem from="1726220948087" duration="177000" />
       <workItem from="1726221344209" duration="439000" />
       <workItem from="1726223447505" duration="1382000" />
-      <workItem from="1726253718011" duration="37324000" />
+      <workItem from="1726253718011" duration="59631000" />
     </task>
     <servers />
   </component>
